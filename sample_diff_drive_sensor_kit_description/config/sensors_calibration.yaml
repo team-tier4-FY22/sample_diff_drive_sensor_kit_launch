@@ -13,3 +13,10 @@ base_link:
     roll: 0.0
     pitch: 0.0
     yaw: 0.0
+  imu_link:
+    x: -0.055
+    y: 0.0
+    z: 0.135
+    roll: 0.0
+    pitch: 0.0
+    yaw: 3.1415926535
