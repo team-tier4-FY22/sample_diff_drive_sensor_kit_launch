@@ -1,0 +1,22 @@
+<launch>
+  <arg name="launch_driver" default="true"/>
+
+  <group>
+    <push-ros-namespace namespace="imu"/>
+
+    <group>
+      <push-ros-namespace namespace="microstrain"/>
+      <include file="$(find-pkg-share microstrain_inertial_driver)/launch/microstrain_launch.py">
+        <arg name="activate" value="true"/>
+        <arg name="configure" value="true"/>
+        <arg name="namespace" value="/sensing/imu/microstrain"/>
+      </include>
+    </group>
+
+    <include file="$(find-pkg-share imu_corrector)/launch/imu_corrector.launch.xml">
+      <arg name="input_topic" value="microstrain/imu/data"/>
+      <arg name="output_topic" value="imu_data"/>
+      <arg name="param_file" value="$(find-pkg-share individual_params)/config/$(env VEHICLE_ID default)/sample_sensor_kit/imu_corrector.param.yaml"/>
+    </include>
+  </group>
+</launch>
