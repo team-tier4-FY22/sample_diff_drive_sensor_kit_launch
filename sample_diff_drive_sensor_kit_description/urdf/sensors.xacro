@@ -6,7 +6,7 @@
   <!-- rm if vehicle urdf spawn -->
   <link name="base_link" />
 
-  <!-- embedded sensors -->
+  <!-- lidar -->
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
   <xacro:VLP-16 parent="base_link" name="velodyne_rear" topic="/points_raw" hz="10" samples="220" gpu="false">
     <origin
@@ -29,4 +29,18 @@
            ${calibration['base_link']['velodyne_front_base_link']['yaw']}"
     />
   </xacro:VLP-16>
+
+  <!-- imu -->
+  <xacro:imu_macro
+    parent="base_link"
+    name="imu"
+    namespace=""
+    x="${calibration['base_link']['imu_link']['x']}"
+    y="${calibration['base_link']['imu_link']['y']}"
+    z="${calibration['base_link']['imu_link']['z']}"
+    roll="${calibration['base_link']['imu_link']['roll']}"
+    pitch="${calibration['base_link']['imu_link']['pitch']}"
+    yaw="${calibration['base_link']['imu_link']['yaw']}"
+    fps="100"
+  />
 </robot>
