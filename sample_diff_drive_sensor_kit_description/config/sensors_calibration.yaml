@@ -6,7 +6,7 @@ base_link:
     roll: 0.0
     pitch: 0.0
     yaw: 3.1415926535
-  velodyne_front_base_link:
+  velodyne_top_base_link:
     x: 0.41
     y: 0.0
     z: 0.45

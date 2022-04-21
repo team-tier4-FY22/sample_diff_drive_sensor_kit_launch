@@ -19,14 +19,14 @@
     />
   </xacro:VLP-16>
   
-  <xacro:VLP-16 parent="base_link" name="top" topic="/points_raw" hz="10" samples="220" gpu="false">
+  <xacro:VLP-16 parent="base_link" name="velodyne_top" topic="/points_raw" hz="10" samples="220" gpu="false">
     <origin
-      xyz="${calibration['base_link']['velodyne_front_base_link']['x']}
-           ${calibration['base_link']['velodyne_front_base_link']['y']}
-           ${calibration['base_link']['velodyne_front_base_link']['z']}"
-      rpy="${calibration['base_link']['velodyne_front_base_link']['roll']}
-           ${calibration['base_link']['velodyne_front_base_link']['pitch']}
-           ${calibration['base_link']['velodyne_front_base_link']['yaw']}"
+      xyz="${calibration['base_link']['velodyne_top_base_link']['x']}
+           ${calibration['base_link']['velodyne_top_base_link']['y']}
+           ${calibration['base_link']['velodyne_top_base_link']['z']}"
+      rpy="${calibration['base_link']['velodyne_top_base_link']['roll']}
+           ${calibration['base_link']['velodyne_top_base_link']['pitch']}
+           ${calibration['base_link']['velodyne_top_base_link']['yaw']}"
     />
   </xacro:VLP-16>
 
