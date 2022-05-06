@@ -30,5 +30,17 @@
     />
   </xacro:VLP-16>
 
-  <!-- imu -->
+  <link name="imu_link"/>
+  <joint name="base_link_to_imu" type="fixed">
+	<parent name="base_link"/>
+	<child name="imu_link"/>
+	<origin
+      xyz="${calibration['base_link']['imu_link']['x']}
+           ${calibration['base_link']['imu_link']['y']}
+           ${calibration['base_link']['imu_link']['z']}"
+      rpy="${calibration['base_link']['imu_link']['roll']}
+           ${calibration['base_link']['imu_link']['pitch']}
+           ${calibration['base_link']['imu_link']['yaw']}"
+    />
+  </joint>
 </robot>
