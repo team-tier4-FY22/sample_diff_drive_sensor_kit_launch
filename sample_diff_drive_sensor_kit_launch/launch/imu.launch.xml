@@ -9,6 +9,7 @@
       <include file="$(find-pkg-share microstrain_inertial_driver)/launch/microstrain_launch.py">
         <arg name="activate" value="true"/>
         <arg name="configure" value="true"/>
+        <arg name="imu_frame_id" value="imu_link"/>
         <arg name="namespace" value="/sensing/imu/microstrain"/>
       </include>
     </group>
