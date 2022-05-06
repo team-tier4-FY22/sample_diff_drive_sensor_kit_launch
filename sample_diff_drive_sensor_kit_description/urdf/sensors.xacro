@@ -30,10 +30,10 @@
     />
   </xacro:VLP-16>
 
-  <link name="imu_link"/>
+  <link name="sensor"/>
   <joint name="base_link_to_imu" type="fixed">
-	<parent name="base_link"/>
-	<child name="imu_link"/>
+	<parent link="base_link"/>
+	<child link="sensor"/>
 	<origin
       xyz="${calibration['base_link']['imu_link']['x']}
            ${calibration['base_link']['imu_link']['y']}
